@@ -1,0 +1,28 @@
+{% load static %}
+
+<input type="checkbox" id="check">
+<header>
+    <label for="check">
+        <ion-icon name="menu-outline" id="sidebar_btn"></ion-icon>
+    </label>
+    <div class="left">
+        <h3>Combate às <span>Endemias</span></h3>
+    </div>
+    <div class="right">
+        <a href="{% url 'logout' %}" class="sair_btn">Sair</a>
+    </div>
+</header>
+<!-- header final -->
+
+<!-- sidebar começo -->
+<div class="sidebar">
+    <a href="{% url 'lista_imoveis' %}" onclick="mostrarPesquisa()"><ion-icon name="search-outline"></ion-icon><span>Pesquisar Imovel</span></a>
+     <a href="{% url 'cadastrar_imovel' %}" onclick="mostrarCadastro()"><ion-icon name="newspaper-outline"></ion-icon><span>Cadastrar Imovel</span></a>
+    <a href="{% url 'sobre' %}"><ion-icon name="information-circle-outline"></ion-icon><span>Sobre</span></a>
+    <a href="http://127.0.0.1:8000/admin/login/?next=/admin/"><ion-icon name="settings-outline"></ion-icon><span>Área Restrita</span></a>
+</div>
+<!-- sidebar final -->
+
+<div class="content">
+    
+</div>

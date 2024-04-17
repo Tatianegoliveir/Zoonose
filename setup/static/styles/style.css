@@ -1,0 +1,290 @@
+/* Reset de estilos */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos gerais do body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    }
+
+/* Estilos do header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    position: fixed;
+    background: #132835;
+    width: 100%;
+    height: 30px;
+
+}
+
+/* Estilo principal do conteúdo da página */
+main {
+    margin-left: 220px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Estilo da lista não ordenada */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo dos itens da lista */
+li {
+    padding: 10px;
+}
+
+/* Estilo dos links na lista */
+li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo dos links na lista quando passa o mouse por cima */
+li a:hover {
+    background-color: #555;
+}
+
+/* Estilo do contêiner interno */
+.container {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+/* Estilo geral para formulários */
+form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+/* Estilo do título "h2" */
+h2{
+    color: #000000;
+    text-align: center;
+    line-height: 37px;
+    margin-top: 5%;
+    font-family: 'Calibri';
+    font-size: 30px;
+
+}
+
+/* Estilo para rótulos em formulários */
+label {
+    font-weight: bold;
+}
+
+/* Estilo para inputs, selects e textareas em formulários */
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 6px;
+}
+
+/* Estilo para botões em formulários */
+button {
+    background-color: #51b3ec;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilo para botões em formulários quando passa o mouse por cima */
+button:hover {
+    background-color: #193446;
+}
+
+/* Estilo para a seção "left" */
+.left h3{
+    color: #fff;
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* Estilo para a seção "left" */
+.left span{
+    color: #51b3ec;
+}
+
+/* Estilo para o botão "sair" */
+.sair_btn{
+    padding: 5px;
+    background: #51b3ec;
+    text-decoration: none;
+    float: right;
+    margin-top: -40px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+/* Estilo para o botão "sair" quando passa o mouse por cima */
+.sair_btn:hover{
+    background: #132835;
+}
+
+/* Estilos da barra lateral */
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    margin-top: 80px;
+    padding-top: 30px;
+    left: 0;
+    background: #193446;
+    transition: 0.5s;
+    transition-property: left;
+}
+
+/* Estilo da imagem na barra lateral */
+.sidebar .image{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+/* Estilo para o título "h2" na barra lateral */
+.sidebar h2{
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Estilo para links na barra lateral */
+.sidebar a{
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property:background ;
+}
+
+/* Estilo para links na barra lateral quando passa o mouse por cima */
+.sidebar a:hover{
+    background: #132835;
+}
+
+/* Estilo para ícones na barra lateral */
+.sidebar ion-icon{
+    padding-right: 10px;
+}
+
+/* Estilo para o botão de controle da barra lateral */
+label #sidebar_btn{
+    z-index: 1;
+    position: fixed;
+    left: 300px;
+    color: #fff;
+    font-size: 25px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: 0.5s;
+    transition-property:color ;
+}
+
+/* Estilo para o botão de controle da barra lateral quando passa o mouse por cima */
+label #sidebar_btn:hover{
+    color: #132835;
+}
+
+/* Estilo para a checkbox de controle da barra lateral */
+#check:checked ~ .sidebar{
+    left: -190px;
+}
+
+#check:checked ~ .sidebar a span{
+    display: none;
+}
+
+#check:checked ~ .sidebar a{
+    font-size: 20px;
+    margin-left: 170px;
+    width: 80px;
+}
+
+/* Estilo da seção de conteúdo com fundo de imagem */
+.content{
+    background-size: cover;
+    background-position: center;
+    height: 10vh;
+    transition: 0.5s;
+    overflow: hidden;
+    margin-top: -30px;
+}
+
+/* Estilo da seção de conteúdo quando a checkbox de controle está marcada */
+#check:checked ~ .content{
+    margin-left: 20px;
+}
+
+#check{
+    display: none;
+}
+
+/* Estilo para a checkbox de controle quando está marcada */
+.content-sobre{
+    background-size: cover;
+    background-position: center;
+    height: 10vh;
+    transition: 0.5s;
+    overflow: hidden;
+    margin-top: -40px;
+    margin: -30 auto; /* Define as margens automáticas para centralizar */
+    max-width: 800px; /* Define uma largura máxima para o conteúdo */
+    
+}
+
+.h2-sobre{
+
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Verdana';
+    margin: -10px;
+}
+
+
+/* Estilo do rodapé da página */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: autos;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilo do contêiner de resultados */
+.container-resultados{
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    margin-top: 70px;
+    text-align: center;
+}

@@ -1,0 +1,119 @@
+* { 
+
+	-webkit-box-sizing:border-box; 
+	-moz-box-sizing:border-box; 
+	-ms-box-sizing:border-box; 
+	-o-box-sizing:border-box; 
+	box-sizing:border-box; 
+
+}
+
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+
+	width: 100%;
+	height:100%;
+	font-family: 'Calisto MT';
+  background: #132835;
+  font-size: 18px;
+    
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+h2{
+    text-align:center;
+    font-family: Calisto MT;
+    font-size: 35px;
+    font-weight: bold;
+    color:#fff; 
+    
+}
+
+.submit {
+    
+    width:100%;
+    padding: 0.6em 1em;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(47, 0, 255) 0%, rgb(29, 22, 178) 100%);
+    text-decoration: none;
+    font-size:1.1em; 
+    color: #fff;
+    border-radius: 6px;
+    border: none; 
+}
+
+.zoom-shadow {
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+
+.zoom-shadow:hover, .zoom-shadow:focus, .zoom-shadow:active {
+
+  box-shadow: 0 13px 8px -8px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+
+}
+
+
+.login { 
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:400px;
+	height:800px;
+  font-weight: bold;
+  color:#fff; 
+
+ 
+}
+
+.login h1 { 
+
+	color:#fff; 
+	text-shadow: 0 0 10px rgba(0,0,0,0.3); 
+	letter-spacing:1px; 
+	text-align:right; 
+  margin-top: 15px;
+  
+}
+
+input { 
+
+width: 100%;
+margin-bottom: 15px;
+background: rgb(255, 255, 255);
+border: none;
+outline: none;
+padding: 10px;
+font-size: 16px;
+color: #213b65;
+border-radius: 6px;
+transition: .5s;
+font-family: Calisto MT;
+
+}
+
+input:focus { background-color: #f0f0f0; 
+}
+
+
+h2{
+  color: #fff; 
+}

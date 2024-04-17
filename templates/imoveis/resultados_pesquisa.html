@@ -1,0 +1,114 @@
+{% extends 'imoveis/base.html '%}
+{% load static %}
+{% block content %}
+
+<main>
+    <h2>Resultados da Pesquisa</h2>
+    <div class="container">
+        <table class="table table-hover" id="tb-lista">
+            {% if resultados_pesquisa %}
+            <thead>
+                <tr>
+                    <th>Bairro</th>
+                    <th>Quadra</th>
+                    <th>Lado</th>
+                    <th>Número</th>
+                    <th>Focos encontrados</th>
+                    <th>Ações realizadas</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for imovel in resultados_pesquisa %}
+                <tr>
+                    <td>{{ imovel.bairro }}</td>
+                    <td>{{ imovel.quadra }}</td>
+                    <td>{{ imovel.lado }}</td>
+                    <td>{{ imovel.numero }}</td>
+                    <td>{{ imovel.focos_encontrados }}</td>
+                    <td>{{ imovel.acoes_realizadas }}</td>
+                    <td>
+                        <form id="deleteForm{{ imovel.id }}" method="post"
+                            action="{% url 'excluir_imovel' imovel_id=imovel.id %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="hidden" name="action" value="delete">
+                            <button type="button" class="deleteButton" data-imovel-id="{{ imovel.id }}">Excluir</button>
+                        </form>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>Nenhum resultado encontrado.</p>
+
+        {% endif %}
+    </div>
+
+    <script>
+        // Seleciona todos os botões de exclusão e adiciona um ouvinte de eventos a cada um
+        var deleteButtons = document.querySelectorAll('.deleteButton');
+        deleteButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                // Obtém o ID do imóvel a ser excluído do atributo 'data-imovel-id' do botão
+                var imovelId = this.getAttribute('data-imovel-id');
+                // Exibe um modal de confirmação usando JavaScript
+                if (confirm("Tem certeza que deseja excluir este imóvel?")) {
+                    // Se o usuário confirmar, envia o formulário para excluir o imóvel correspondente
+                    document.getElementById('deleteForm' + imovelId).submit();
+                }
+            });
+        });
+    </script>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $("#tb-lista").DataTable({
+            responsive: true,
+            "aaSorting": [],
+            "pageLength": 6,
+            "language": {
+                "decimal": "",
+                "emptyTable": "Sem dados disponíveis",
+                "info": "Mostrando de _START_ até _END_ de _TOTAL_ registos",
+                "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                "infoFiltered": "(filtrado de _MAX_ registos no total)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Exibir registros _MENU_ ",
+                "loadingRecords": "A carregar dados...",
+                "processing": "A processar...",
+                "search": "Pesquisa:",
+                "zeroRecords": "Não foram encontrados resultados",
+                "paginate": {
+                    "first": "Primeiro",
+                    "last": "Último",
+                    "next": "Seguinte",
+                    "previous": "Anterior"
+                },
+                "aria": {
+                    "sortAscending": ": ordem crescente",
+                    "sortDescending": ": ordem decrescente"
+                }
+            }
+        });
+    });
+
+</script>
+
+{% endblock %}
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
+</head>
+
+<img src="{% static 'imagem/zoosys1.png'%}">
+
+<body>
+    <div class="login">
+        <form method="post">
+            <div class="card-header">
+                <h2>Login</h2>
+            </div>
+            <div class="card-content">
+                <div class="card-content-area">
+                    <label for="{{ form.username.id_for_label }}">Usuário</label>
+                    {{ form.username }}
+                </div>
+                <div class="card-content-area">
+                    <label for="{{ form.password.id_for_label }}">Senha</label>
+                    {{ form.password }}
+                </div>
+            </div>
+            <div class="card-footer">
+                <input type="submit" value="Login" class="submit">
+            </div>
+            {% csrf_token %}
+        </form>
+    </div>
+    {% csrf_token %}
+    </form>
+    </div>
+</body>
+
+</html>
